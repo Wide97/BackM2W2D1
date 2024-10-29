@@ -1,6 +1,7 @@
 package marcowidesott.BackM2W2D1.services;
 
 import marcowidesott.BackM2W2D1.entities.Autore;
+import marcowidesott.BackM2W2D1.exceptions.NotFoundException;
 import marcowidesott.BackM2W2D1.payloads.AutorePayload;
 import org.springframework.stereotype.Service;
 
@@ -27,5 +28,14 @@ public class AutoreService {
         this.autoreList.add(autore);
         return autore;
 
+    }
+
+    public Autore findById(Long userId) {
+        Autore found = null;
+        for (Autore autore : this.autoreList) {
+            if (autore.getId() == userId) found = autore;
+        }
+        if (found == null) throw new NotFoundException(Math.toIntExact(userId));
+        return found;
     }
 }

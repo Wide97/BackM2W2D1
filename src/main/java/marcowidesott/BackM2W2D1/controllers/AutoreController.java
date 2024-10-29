@@ -23,10 +23,10 @@ public class AutoreController {
 
     }
 
-    // @GetMapping
-    //public Autore getSingleAuthor() {
-
-    // }
+    @GetMapping("/{userId}")
+    public Autore getSingleAuthor(@PathVariable Long userId) {
+        return this.autoreService.findById(userId);
+    }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)

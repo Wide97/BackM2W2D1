@@ -1,6 +1,7 @@
 package marcowidesott.BackM2W2D1.services;
 
 import marcowidesott.BackM2W2D1.entities.Blog;
+import marcowidesott.BackM2W2D1.exceptions.NotFoundException;
 import marcowidesott.BackM2W2D1.payloads.BlogPayload;
 import org.springframework.stereotype.Service;
 
@@ -23,5 +24,14 @@ public class BlogService {
         this.listBlog.add(blog);
         return blog;
 
+    }
+
+    public Blog findById(Long blogId) {
+        Blog found = null;
+        for (Blog blog : this.listBlog) {
+            if (blog.getId() == blogId) found = blog;
+        }
+        if (found == null) throw new NotFoundException(Math.toIntExact(blogId));
+        return found;
     }
 }

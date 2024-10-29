@@ -22,10 +22,10 @@ public class BlogController {
 
     }
 
-    // @GetMapping
-    //public Blog getSingleBlog() {
-
-    // }
+    @GetMapping("/{blogId}")
+    public Blog getSingleBlog(@PathVariable Long blogId) {
+        return this.blogService.findById(blogId);
+    }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
