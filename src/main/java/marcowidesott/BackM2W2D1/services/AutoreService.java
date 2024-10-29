@@ -9,4 +9,8 @@ import java.util.List;
 @Service
 public class AutoreService {
     private List<Autore> autoreList = new ArrayList<>();
+
+    public List<Autore> findallAuthors() {
+        return this.autoreList;
+    }
 }

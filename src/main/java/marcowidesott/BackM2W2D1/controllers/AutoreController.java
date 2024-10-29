@@ -1,6 +1,8 @@
 package marcowidesott.BackM2W2D1.controllers;
 
 import marcowidesott.BackM2W2D1.entities.Autore;
+import marcowidesott.BackM2W2D1.services.AutoreService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,29 +11,33 @@ import java.util.List;
 @RequestMapping("/autore")
 public class AutoreController {
 
+    @Autowired
+    private AutoreService autoreService;
+
 
     @GetMapping
-    public List<Autore> getBlogs() {
+    public List<Autore> getAuthor() {
+        return this.autoreService.findallAuthors();
 
     }
 
     @GetMapping
-    public Autore getSingleBlog() {
+    public Autore getSingleAuthor() {
 
     }
 
     @PostMapping
-    public Autore createBlog() {
+    public Autore createAuthor() {
 
     }
 
     @PutMapping
-    public Autore modifyingBlog() {
+    public Autore modifyingAuthor() {
 
     }
 
     @DeleteMapping
-    public Autore deleteBlog() {
+    public Autore deleteAuthor() {
 
     }
 

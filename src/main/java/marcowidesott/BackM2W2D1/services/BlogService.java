@@ -9,4 +9,8 @@ import java.util.List;
 @Service
 public class BlogService {
     private List<Blog> listBlog = new ArrayList<>();
+
+    public List<Blog> findAllBlogs() {
+        return this.listBlog;
+    }
 }
