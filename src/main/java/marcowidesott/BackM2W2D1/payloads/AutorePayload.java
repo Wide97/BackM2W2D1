@@ -4,8 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.time.LocalDate;
-
 @Setter
 @Getter
 @ToString
@@ -13,9 +11,9 @@ public class AutorePayload {
     private String name;
     private String surname;
     private String email;
-    private LocalDate dataDiNascita;
+    private String dataDiNascita;
 
-    public AutorePayload(LocalDate dataDiNascita, String email, String surname, String name) {
+    public AutorePayload(String dataDiNascita, String email, String surname, String name) {
         this.dataDiNascita = dataDiNascita;
         this.email = email;
         this.surname = surname;

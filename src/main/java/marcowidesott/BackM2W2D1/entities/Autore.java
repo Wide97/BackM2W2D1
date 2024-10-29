@@ -4,8 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.time.LocalDate;
-
 @Getter
 @Setter
 @ToString
@@ -14,10 +12,10 @@ public class Autore {
     private String name;
     private String surname;
     private String email;
-    private LocalDate dataDiNascita;
+    private String dataDiNascita;
     private String avatar;
 
-    public Autore(String nome, String cognome, String email, LocalDate dataDiNascita) {
+    public Autore(String nome, String cognome, String email, String dataDiNascita) {
         this.name = nome;
         this.surname = cognome;
         this.email = email;

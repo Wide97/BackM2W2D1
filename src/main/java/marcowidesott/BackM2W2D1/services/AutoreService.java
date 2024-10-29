@@ -22,7 +22,7 @@ public class AutoreService {
         Random rndm = new Random();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MM yyyy");
         LocalDate dataDiNascita = LocalDate.parse("12 08 1980", formatter);
-        Autore autore = new Autore(body.getName(), body.getSurname(), body.getEmail(), dataDiNascita);
+        Autore autore = new Autore(body.getName(), body.getSurname(), body.getEmail(), "12 - 08 - 1980");
         autore.setId(rndm.nextLong(1, 1000));
         this.autoreList.add(autore);
         return autore;
