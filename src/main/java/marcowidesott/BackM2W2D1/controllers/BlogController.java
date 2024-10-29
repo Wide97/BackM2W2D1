@@ -1,8 +1,10 @@
 package marcowidesott.BackM2W2D1.controllers;
 
 import marcowidesott.BackM2W2D1.entities.Blog;
+import marcowidesott.BackM2W2D1.payloads.BlogPayload;
 import marcowidesott.BackM2W2D1.services.BlogService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,24 +22,26 @@ public class BlogController {
 
     }
 
-    @GetMapping
-    public Blog getSingleBlog() {
+    // @GetMapping
+    //public Blog getSingleBlog() {
 
-    }
+    // }
 
     @PostMapping
-    public Blog createBlog() {
+    @ResponseStatus(HttpStatus.CREATED)
+    public Blog createBlog(BlogPayload body) {
+        return this.blogService.saveBlog(body);
 
     }
 
-    @PutMapping
-    public Blog modifyingBlog() {
+    //@PutMapping
+    //public Blog modifyingBlog() {
 
-    }
+    // }
 
-    @DeleteMapping
-    public Blog deleteBlog() {
+    // @DeleteMapping
+    // public Blog deleteBlog() {
 
-    }
+    //}
 
 }

@@ -1,8 +1,10 @@
 package marcowidesott.BackM2W2D1.controllers;
 
 import marcowidesott.BackM2W2D1.entities.Autore;
+import marcowidesott.BackM2W2D1.payloads.AutorePayload;
 import marcowidesott.BackM2W2D1.services.AutoreService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,25 +23,26 @@ public class AutoreController {
 
     }
 
-    @GetMapping
-    public Autore getSingleAuthor() {
+    // @GetMapping
+    //public Autore getSingleAuthor() {
 
-    }
+    // }
 
     @PostMapping
-    public Autore createAuthor() {
-
+    @ResponseStatus(HttpStatus.CREATED)
+    public Autore createAuthor(@RequestBody AutorePayload body) {
+        return this.autoreService.saveAuthor(body);
     }
 
-    @PutMapping
-    public Autore modifyingAuthor() {
+    // @PutMapping
+    //public Autore modifyingAuthor() {
 
-    }
+    //}
 
-    @DeleteMapping
-    public Autore deleteAuthor() {
+    //@DeleteMapping
+    // public Autore deleteAuthor() {
 
-    }
+    // }
 
 
 }
